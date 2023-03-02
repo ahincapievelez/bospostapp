@@ -1,27 +1,30 @@
 import { Link } from "react-router-dom";
 
 function Nav(props) {
+  
   return (
-    <div className="container">
+    <div className="header">
       <div>
+        <Link to="/">
         <img className="logo col-2" src="2.png" alt="Bostonian Post"/>
+        </Link>
       </div>
 
-      <div className="nav container">
+      <div className="nav">
         <Link to="/">
-          <div>Home</div>
+          <div className="nav-title">Home</div>
         </Link>
         <Link to="/about">
-          <div>About</div>
+          <div className="nav-title">About</div>
         </Link>
         <Link to="/sports">
-          <div>Sports</div>
+          <div className="nav-title">Sports</div>
         </Link>
         <Link to="/business">
-          <div>Business</div>
+          <div className="nav-title">Business</div>
         </Link>
         <Link to="/tech">
-          <div>Technology</div>
+          <div className="nav-title">Technology</div>
         </Link>
       </div>
     </div>
