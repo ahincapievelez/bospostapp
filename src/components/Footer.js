@@ -1,9 +1,13 @@
 function Footer() {
     return (
-        <div className="bottom">
-            <footer className="footer">
-                <span>©2023 Bostonian Post</span>
-            </footer>
+        <div className="container">
+            <div className="row">
+                <div className="col">
+                    <footer className="footer">
+                        <span>©2023 Bostonian Post</span>
+                    </footer>
+                </div>
+            </div>
         </div>
     );
   }
