@@ -4,8 +4,6 @@
 
 .logo {
   margin-top: 20px;
-  width: 100px;
-  height: 100px;
 }
 
 .nav {
@@ -48,7 +46,32 @@
 } */
 
 .slider {
-  border: 1px solid hotpink;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+.slider-title {
+  font-family: 'Gloock', serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: 1.5px;
+  color: white;
+}
+
+.slider-paragh {
+  font-family: 'Merriweather', serif;
+  font-size: 12px;
+  font-weight: 200;
+  text-align: left;
+  color: white;
 }
 
 .main-title {
@@ -63,7 +86,7 @@
 
 .title {
   font-family: 'Gloock', serif;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
   text-align: left;
   letter-spacing: 1.5px;
@@ -85,8 +108,9 @@
 }
 
 .image {
-  width: 300px;
-  height: 200px;
+  border: 1px solid forestgreen;
+  /* width: 300px;
+  height: 100px; */
   margin-bottom: 20px;
 }
 
@@ -96,8 +120,7 @@
 }
 
 .topmass-list {
-  border-bottom: 1px solid #D8D8D8;
-  margin: 0 3px 0 3px;
+  margin-top: 10px;
 }
 
 .right-column {
@@ -142,8 +165,23 @@
   background-color: black;
 }
 
+.bottom-row {
+  background-color: #F8F4EA;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bottom-col {
+  margin-top: 20px;
+}
+
+.opinion-line {
+  height: 1px;
+  margin: 0 10px 20px 10px;
+  background-color: #D8D8D8;
+}
+
 .footer {
-  height: 80px;
   background-color: white;
   margin-top: 20px;
   margin-bottom: 20px;

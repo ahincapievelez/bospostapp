@@ -50,3 +50,19 @@ export async function mostReadnews(category) {
   return newsData
 }
 
+export async function opinionNews() {
+
+  let newsData;
+  const key = process.env.REACT_APP_KEY
+  let url = `https://newsapi.org/v2/everything?q=opinion&sortBy=relevancy&pageSize=2&language=en&apiKey=${key}`;
+
+  try {
+    let response = await fetch(url);
+    newsData = await response.json();
+    console.log(newsData)
+  } catch (error) {
+    console.log(error);
+  }
+
+  return newsData
+}

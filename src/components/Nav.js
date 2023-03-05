@@ -8,7 +8,7 @@ function Nav(props) {
       <div className="row">
         <div className="col-12">
           <Link to="/">
-          <img className="logo col-2" src="2.png" alt="Bostonian Post"/>
+          <img className="logo col-2" src="logo.png" alt="Bostonian Post"/>
           </Link>
         </div>
       </div>

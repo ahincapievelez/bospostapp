@@ -7,6 +7,7 @@ import About from './pages/About';
 import Sports from './pages/Sports';
 import Business from './pages/Business';
 import Tech from './pages/Tech';
+import Article from './components/Article';
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
         <Route path="/sports" element={<Sports />} />
         <Route path="/business" element={<Business />} />
         <Route path="/tech" element={<Tech />} />
+        <Route path="/article/:title" element={<Article />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
 
