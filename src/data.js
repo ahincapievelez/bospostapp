@@ -66,3 +66,19 @@ export async function opinionNews() {
 
   return newsData
 }
+
+export async function weather() {
+
+  let weatherData;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=Boston,us&appid=4c4a8380508c4fb894551d1c04f61454&units=imperial`;
+
+  try {
+    let response = await fetch(url);
+    weatherData = await response.json();
+    console.log(weatherData)
+  } catch (error) {
+    console.log(error);
+  }
+
+  return weatherData
+}

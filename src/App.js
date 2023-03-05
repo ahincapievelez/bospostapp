@@ -4,10 +4,8 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Sports from './pages/Sports';
-import Business from './pages/Business';
-import Tech from './pages/Tech';
-import Article from './components/Article';
+import Login from './pages/Login';
+import Article from './pages/Article';
 
 function App() {
   
@@ -18,10 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/sports" element={<Sports />} />
-        <Route path="/business" element={<Business />} />
-        <Route path="/tech" element={<Tech />} />
-        <Route path="/article/:title" element={<Article />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/news/:title" element={<Article />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
 

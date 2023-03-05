@@ -4,6 +4,7 @@
 
 .logo {
   margin-top: 20px;
+  width: 350px;
 }
 
 .nav {
@@ -30,11 +31,86 @@
   border-right: 1px solid #D71E1F;
 }
 
+.date {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.temp-txt {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.login {
+  width: 118px;
+}
+
+.login-txt {
+  padding: 5px 0;
+  background-color: #D71E1F;
+  border-radius: 5px;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+}
+
+.login-title{
+  margin: 20px 0;
+  font-family: 'Gloock', serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.labels {
+  font-family: 'Merriweather', serif;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.btn {
+  border: 1px solid #D71E1F;
+  background-color: #D71E1F;
+  font-family: 'Jost', sans-serif;
+  color: white;
+}
+
+.btn:hover {
+  border: 1px solid black;
+  background-color: black;
+}
+
 .left-column {
   border-right: 1px solid black;
   border-top: 0;
   border-bottom: 0;
   padding-right: 20px;
+}
+
+.link-article {
+  text-decoration: none;
+  color: black;
+}
+
+.link-article:hover {
+  text-decoration: underline;
+  color: #2C3333;
+}
+
+.link-article-light {
+  text-decoration: none;
+  color: white;
+}
+
+.link-article-light:hover {
+  text-decoration: underline;
+  color: #EEEEEE;
 }
 
 /* .left-column-top {

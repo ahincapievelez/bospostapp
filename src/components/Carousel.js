@@ -1,20 +1,15 @@
-function Carousel() {
+import { Link } from "react-router-dom"
+
+function Carousel({ content, title, urlImage, author }) {
 
     return (
       <div>
         <div className="carousel-item active" data-bs-interval="5000">
             <div className="carousel-caption" data-bs-interval="5000">
-                <h5 className="slider-title">Article Title</h5>
-                <p className="slider-paragh">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate justo a erat sodales sagittis.</p>
+                <h5 className="slider-title"><Link className="link-article-light" to={`/news/${title}`}>{title}</Link></h5>
+                <p className="slider-paragh">{author}</p>
             </div>
-          <img className="img-fluid" src="img1.jpg" alt="hello" />
-        </div>
-        <div className="carousel-item">
-            <div className="carousel-caption" data-bs-interval="5000">
-                <h5 className="slider-title">Article Title</h5>
-                <p className="slider-paragh">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vulputate justo a erat sodales sagittis.</p>
-            </div>
-          <img className="img-fluid" src="img2.jpg" alt="hello" />
+          <img className="img-fluid" src={urlImage} alt="hello" />
         </div>
       </div>
     );

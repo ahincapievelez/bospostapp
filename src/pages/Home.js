@@ -8,21 +8,22 @@ import Carousel from "../components/Carousel";
 
 function Home() {
 
-    let [newsData, setNewsData] = useState(null)
-    let [mostData, setMostData] = useState(null)
-    let [topMaData, setTopMaData] = useState(null)
-    let [opinionData, setOpinionData] = useState(null)
+    let [newsData, setNewsData] = useState(null);
+    let [mostData, setMostData] = useState(null);
+    let [topMaData, setTopMaData] = useState(null);
+    let [opinionData, setOpinionData] = useState(null);
+    let [carouselData, setCarouselData] = useState(null);
 
     useEffect(() => {
-      getNews()
-      getMostRead()
-      getTopMa()
-      getOpinionNews()
+      getNews();
+      getMostRead();
+      getTopMa();
+      getOpinionNews();
+      setCarousel();
     }, []);
-  
-    async function getNews() {
 
-      let data = await topUsnews('us');
+    async function getNews() {
+      let data = await topUsnews("us");
 
       let newListComponent = data.articles.map((article) => {
         return (
@@ -41,42 +42,53 @@ function Home() {
       setNewsData(newListComponent);
     }
 
-    async function getMostRead() {
+    async function setCarousel() {
+      let data = await topUsnews("us");
 
-        let data = await mostReadnews('general');
-  
-        let mostReadComponent = data.articles.map((article) => {
-          return (
-            <Mostread
-              key={crypto.randomUUID()}
-              title={article.title}
-            />
-          );
-        });
-  
-        setMostData(mostReadComponent);
+      let CarouselComponent = data.articles.map((article) => {
+        return (
+          <Carousel
+            key={crypto.randomUUID()}
+            author={article.author}
+            content={article.content}
+            title={article.title}
+            urlImage={article.urlToImage}
+          />
+        );
+      });
+
+      setCarouselData(CarouselComponent);
+    }
+
+    async function getMostRead() {
+      let data = await mostReadnews("general");
+
+      let mostReadComponent = data.articles.map((article) => {
+        return <Mostread key={crypto.randomUUID()} title={article.title} />;
+      });
+
+      setMostData(mostReadComponent);
     }
 
     async function getTopMa() {
+      let data = await topManews("massachusetts");
 
-        let data = await topManews('massachusetts');
-  
-        let topMassComponent = data.articles.map((article) => {
-          return (
-            <TopMass
-              key={crypto.randomUUID()}
-              title={article.title}
-              description={article.description}
-            />
-          );
-        });
-  
-        setTopMaData(topMassComponent);
+      let topMassComponent = data.articles.map((article) => {
+        return (
+          <TopMass
+            key={crypto.randomUUID()}
+            title={article.title}
+            description={article.description}
+            urlImage={article.urlToImage}
+          />
+        );
+      });
+
+      setTopMaData(topMassComponent);
     }
 
     async function getOpinionNews() {
-
-      let data = await  opinionNews();
+      let data = await opinionNews();
 
       let topOpinionComponent = data.articles.map((article) => {
         return (
@@ -89,7 +101,7 @@ function Home() {
       });
 
       setOpinionData(topOpinionComponent);
-  }
+    }
 
     return (
         <div className="container">
@@ -109,7 +121,7 @@ function Home() {
                             <div className="col">
                               <div className="carousel slide carousel-fade" id="news-slider" data-bs-ride="carousel">
                                 <div className="carousel-inner">
-                                  <Carousel />
+                                  {carouselData}
                                 </div>
 
                                 {/* Button Controlls */}
@@ -124,6 +136,7 @@ function Home() {
                                 <div className="carousel-indicators">
                                   <button className="active" type="button" data-bs-target="#news-slider" data-bs-slide-to="0" aria-label="Slide1"></button>
                                   <button className="" type="button" data-bs-target="#news-slider" data-bs-slide-to="1" aria-label="Slide2"></button>
+                                  <button className="" type="button" data-bs-target="#news-slider" data-bs-slide-to="2" aria-label="Slide3"></button>
                                 </div>
                               </div>
                             </div>
