@@ -64,7 +64,7 @@ function Home() {
       let data = await mostReadnews("general");
 
       let mostReadComponent = data.articles.map((article) => {
-        return <Mostread key={crypto.randomUUID()} title={article.title} />;
+        return <Mostread key={crypto.randomUUID()} title={article.title} content={article.content} />;
       });
 
       setMostData(mostReadComponent);
@@ -80,6 +80,7 @@ function Home() {
             title={article.title}
             description={article.description}
             urlImage={article.urlToImage}
+            content={article.content}
           />
         );
       });
@@ -96,6 +97,7 @@ function Home() {
             key={crypto.randomUUID()}
             title={article.title}
             description={article.description}
+            content={article.content}
           />
         );
       });
